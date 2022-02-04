@@ -27,16 +27,15 @@ class DoctorInfoHeader extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
       Container(
         color: Colors.transparent,
-        height: MediaQuery.of(context).viewPadding.top +
-            0.477 * svgBackground.width!,
+        height: 0.477 * svgBackground.width! +
+            MediaQuery.of(context).viewPadding.top +
+            44,
         width: svgBackground.width,
         child: Stack(
           children: [
             Positioned(child: svgBackground),
             Positioned(
-                top: MediaQuery.of(context).viewPadding.top +
-                    0.2 * svgBackground.width! * 0.40 +
-                    44,
+                top: (svgBackground.width! * 0.44) * 0.3,
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   width: MediaQuery.of(context).size.width,

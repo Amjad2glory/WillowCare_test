@@ -60,9 +60,9 @@ class _DoctorOverviewScreenState extends State<DoctorOverviewScreen>
               SliverAppBar(
                 automaticallyImplyLeading: false,
                 // expandedHeight: 300,
-                expandedHeight: MediaQuery.of(context).viewPadding.top +
-                    0.477 * background.width! +
-                    44,
+                expandedHeight: 0.477 * background.width! +
+                    144 +
+                    MediaQuery.of(context).viewPadding.top,
                 backgroundColor: Colors.transparent,
                 // foregroundColor: Colors.transparent,
                 flexibleSpace: FlexibleSpaceBar(

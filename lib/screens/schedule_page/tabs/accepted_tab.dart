@@ -47,21 +47,24 @@ class AcceptedTab extends StatelessWidget {
             child: ListView.builder(
               itemCount: _dommyData.length,
               itemBuilder: (context, index) {
-                return DoctorInfoCard(
-                  doctorName: _dommyData[index]['name'],
-                  imageUrl: _dommyData[index]['imageUrl'],
-                  description: _dommyData[index]['description'],
-                  date: _dommyData[index]['date'],
-                  isConfirmed: _dommyData[index]['isConfirmed'],
-                  onTap: () {
-                    _dommyData[index]['isConfirmed']
-                        ? Navigator.of(context).pushNamed('doctor-overview')
-                        : Scaffold.of(context).showSnackBar(SnackBar(
-                            backgroundColor: Colors.red,
-                            content: Text('Doctor is not Confirmed'),
-                            duration: Duration(seconds: 1),
-                          ));
-                  },
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: DoctorInfoCard(
+                    doctorName: _dommyData[index]['name'],
+                    imageUrl: _dommyData[index]['imageUrl'],
+                    description: _dommyData[index]['description'],
+                    date: _dommyData[index]['date'],
+                    isConfirmed: _dommyData[index]['isConfirmed'],
+                    onTap: () {
+                      _dommyData[index]['isConfirmed']
+                          ? Navigator.of(context).pushNamed('doctor-overview')
+                          : Scaffold.of(context).showSnackBar(SnackBar(
+                              backgroundColor: Colors.red,
+                              content: Text('Doctor is not Confirmed'),
+                              duration: Duration(seconds: 1),
+                            ));
+                    },
+                  ),
                 );
               },
             ),
